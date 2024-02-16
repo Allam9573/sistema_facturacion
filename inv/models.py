@@ -8,7 +8,7 @@ class Categoria(ClaseModelo):
         max_length=100, help_text='Descripcion Categoria', unique=True)
 
     def __str__(self):
-        return f'{descripcion}'
+        return f'{self.descripcion}'
 
     class Meta:
         verbose_name_plural = 'Categorias'

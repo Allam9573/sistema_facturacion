@@ -4,10 +4,6 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 
-def home(request):
-    return render(request, 'blank.html')
-
-
 def sign_up(request):
     return render(request, 'register.html')
 

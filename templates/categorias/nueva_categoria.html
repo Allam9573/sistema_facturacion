@@ -1,0 +1,31 @@
+{% extends 'blank.html' %}
+
+{% block content %}
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Nueva Categoria</div>
+            <div class="h5 mt-3 mb-0 font-weight-bold text-gray-800"></div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+          </div>
+        </div>
+        <div class="row">
+          <form action="{% url "guardar_categoria" %}" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+              <input type="text" name="descripcion" placeholder="Descripcion Categoria" id="" class="form-control" />
+              <label class="ml-2" for="estado">Estado</label>
+              <input class="ml-2" type="checkbox" name="estado" id="estado" />
+            </div>
+            <input type="submit" class="btn btn-success rounded-pill mt-3" value="Guardar" />
+            <a href="{% url 'categorias' %}" class="btn btn-outline-danger rounded-pill mt-3">Cancelar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
