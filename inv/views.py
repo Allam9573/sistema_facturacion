@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from . models import Categoria
 from django.contrib.auth.models import User
 # Create your views here.
@@ -13,6 +13,24 @@ def categorias(request):
 
 def nueva_categoria(request):
     return render(request, 'categorias/nueva_categoria.html')
+
+
+def editar_categoria(request, id):
+    categoria = Categoria.objects.get(id=id)
+    return render(request, 'categorias/editar.html', {
+        'categoria': categoria
+    })
+
+
+def actualizar_categoria(request, id):
+    if request.method == 'POST':
+        categoria = Categoria.objects.get(id=id)
+        descripcion = request.POST['descripcion']
+        categoria.descripcion = descripcion
+        categoria.save()
+        return redirect('categorias')
+    else:
+        return redirect('categorias')
 
 
 def guardar_categoria(request):

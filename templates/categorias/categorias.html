@@ -37,9 +37,9 @@
                 <td>{{ categoria.descripcion }}</td>
                 <td>{{ categoria.estado }}</td>
                 <td>{{ categoria.fecha_creacion|date:'d/m/Y' }}</td>
-                <td>{{ categoria.fecha_modificacion|date:'d/m/Y' }}</td>
+                <td>{{ categoria.fecha_modificacion }}</td>
                 <td>
-                  <a href="" class="btn btn-primary rounded-pill">Ver Detalles</a>
+                  <a href="{{ categoria.id }}/" class="btn btn-success rounded-pill">Editar</a>
                   <a href="" class="btn btn-danger rounded-pill">Eliminar</a>
                 </td>
               </tr>
