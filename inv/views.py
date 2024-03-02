@@ -51,3 +51,9 @@ def guardar_categoria(request):
 
     else:
         return redirect('categorias')
+
+
+def eliminar_categoria(request, id):
+    categoria = Categoria.objects.get(id=id)
+    categoria.delete()
+    return redirect('categorias')
