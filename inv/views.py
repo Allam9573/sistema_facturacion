@@ -1,6 +1,5 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 from . models import Categoria
-from django.contrib.auth.models import User
 # Create your views here.
 
 
